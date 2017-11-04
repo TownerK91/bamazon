@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "bamazon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TownerK91/bamazon.git"
+  },
+  "author": "kevinTowner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TownerK91/bamazon/issues"
+  },
+  "homepage": "https://github.com/TownerK91/bamazon#readme",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
+}
