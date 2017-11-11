@@ -28,12 +28,19 @@ var run = function() { //STEP #6
     	message:"how many?",
     }]).then(function(answer){
     	console.log("You picked Item" + answer.itemID);
-    	console.log("You are buying " + answer.stock + " of item # " + answer.itemID); 
-    	// if(answer.stock > "SELECT [i].0 FROM stock_quantity"){
-    	// 	console.log("no more");
+    	console.log("You are buying " + answer.stock + " of item # " + answer.itemID);
+//===============--SCRUB--===================================================
+    	// connection.query() 
+    	// if(answer.stock <= "SELECT [i].0 FROM stock_quantity"){
+    	// 	console.log("We have it");
     	// }else{
-    	// 	console.log("hi");
+    	// 	console.log("insufficient inventory");
     	// }
+//===============--SCRUB--===================================================
+        var chosen = answer.itemID
+        console.log(chosen);
+        var many = answer.stock
+        console.log(many);
     })
 }
 //------------------------------------------------------
