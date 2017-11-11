@@ -41,7 +41,7 @@ var run = function() { //STEP #6
 
 
 connection.query("SELECT * FROM products", function(err, results){
-    for (var i = 0l i<results.length; i++){
+    for (var i = 0; i<results.length; i++){
 
     }
 }); //<-End of connection.query(TWO)
@@ -75,4 +75,4 @@ connection.query("SELECT * FROM products", function(err, results){
         // }else{
         //  console.log("insufficient inventory");
         // }
-//===============--SCRUB--===================================================
+//===============--SCRUB--==================================================
