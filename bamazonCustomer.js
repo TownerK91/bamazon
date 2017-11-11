@@ -39,7 +39,7 @@ connection.query("SELECT * FROM products", function(err, results){
         throw err;
     }
     for (var i = 0; i < results.length; i++) { 
-        console.log("<>" + results[i].id + " \n " + results[i].product_name + " \n " + results[i].department_name + " \n " + results[i].price +" \n " + results[i].stock_quantity);
+        console.log(" ID # -->" + results[i].id + " \n Product-->" + results[i].product_name + " \n Department-->" + results[i].department_name + " \n Amt--> $" + results[i].price +" \n Quantity--> " + results[i].stock_quantity);
     }
     console.log("**************************************************");
     run();
