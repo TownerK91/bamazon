@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
 
-var connection = mysql.createConnection({
+var connection = mysql.createConnection({ //STEPS #2 #3 & #4
     host: "localhost",
     PORT: 3306,
     user: "root",
@@ -12,7 +12,6 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     //<good> console.log("http://localhost "+ connection.threadId);
-
 });
 
 
@@ -22,7 +21,25 @@ connection.query("SELECT * FROM products", function(err, results){
         throw err;
     }
     for (var i = 0; i < results.length; i++) { 
-        console.log(results[i].id + " | " + results[i].product_name + " | " + results[i].department_name + " | " + results[i].price + " | " + results[i].stock_quantity);
+        console.log(results[i].id + " <> " + results[i].product_name + " <> " + results[i].department_name + " <> " + results[i].price + " <> " + results[i].stock_quantity);
     }
     console.log("**************************************************");
+    run();
 });
+
+
+var run = function() { //
+    inquirer.prompt(
+    {
+        name: "id",
+        type: "input",
+        message: "What is the item id?",
+    },
+    {
+    	name:"stock_quantity",
+    	type: "input",
+    	message:"how many?"
+    });
+};
+
+    

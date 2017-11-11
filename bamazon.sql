@@ -1,5 +1,5 @@
 
-
+--#####STEP2
 
 drop database if exists bamazon;
 
@@ -7,7 +7,7 @@ create database bamazon;
 
 use bamazon; 
 
-create table products
+create table products. --#####STEP3
 (
 id integer(5) auto_increment not null,
 product_name  varchar(20) not null, 
@@ -15,7 +15,8 @@ department_name varchar(20) not null,
 price integer(10) not null,
 stock_quantity integer(20),
 primary key (id)
-);
+);    
+--######STEP4
 insert into products( id, product_name, department_name, price, stock_quantity)
 values (1, "Lego", "toys", 25, 2);
 
