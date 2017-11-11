@@ -29,6 +29,11 @@ var run = function() { //STEP #6
     }]).then(function(answer){
     	console.log("You picked Item" + answer.itemID);
     	console.log("You are buying " + answer.stock + " of item # " + answer.itemID); 
+    	// if(answer.stock > "SELECT [i].0 FROM stock_quantity"){
+    	// 	console.log("no more");
+    	// }else{
+    	// 	console.log("hi");
+    	// }
     })
 }
 //------------------------------------------------------
