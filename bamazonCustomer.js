@@ -28,9 +28,9 @@ var run = function() { //STEP #6
     	message:"how many?",
     }]).then(function(answer){
     	console.log("You picked Item" + answer.itemID);
-    	console.log("You are buying " + answer.stock + " of item # " + answer.itemID);
+    	console.log("You are buying " + answer.stock + " of item # " + answer.itemID); 
     })
-};
+}
 //------------------------------------------------------
 
 
