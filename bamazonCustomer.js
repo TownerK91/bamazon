@@ -23,26 +23,28 @@ var run = function() { //STEP #6
         message: "What is the item id?",
     },
     {
-    	name:"stock",
-    	type: "input",
-    	message:"how many?",
+        name:"stock",
+        type: "input",
+        message:"how many?",
     }]).then(function(answer){
-    	console.log("You picked Item" + answer.itemID);
-    	console.log("You are buying " + answer.stock + " of item # " + answer.itemID);
-//===============--SCRUB--===================================================
-    	// connection.query() 
-    	// if(answer.stock <= "SELECT [i].0 FROM stock_quantity"){
-    	// 	console.log("We have it");
-    	// }else{
-    	// 	console.log("insufficient inventory");
-    	// }
-//===============--SCRUB--===================================================
+        console.log("You picked Item" + answer.itemID);
+        console.log("You are buying " + answer.stock + " of item # " + answer.itemID);
         var chosen = answer.itemID
         console.log(chosen);
         var many = answer.stock
         console.log(many);
     })
-}
+}//<-End of Run Function
+
+
+
+
+
+connection.query("SELECT * FROM products", function(err, results){
+    for (var i = 0l i<results.length; i++){
+
+    }
+}); //<-End of connection.query(TWO)
 //------------------------------------------------------
 
 
@@ -53,13 +55,24 @@ connection.query("SELECT * FROM products", function(err, results){
     }
     for (var i = 0; i < results.length; i++) { 
         console.log(" ID # -->" + results[i].id + " \n Product-->" + results[i].product_name + " \n Department-->" + results[i].department_name + " \n Amt--> $" + results[i].price +" \n Quantity--> " + results[i].stock_quantity + 
-        	"\n <----------------->");
+            "\n <----------------->");
     }
     console.log("**************************************************");
     run();
-});
+});  //->end of connection.query(ONE)
 
 
 
 
-    
+
+
+
+
+//===============--SCRUB--===================================================
+        // connection.query() 
+        // if(answer.stock <= "SELECT [i].0 FROM stock_quantity"){
+        //  console.log("We have it");
+        // }else{
+        //  console.log("insufficient inventory");
+        // }
+//===============--SCRUB--===================================================
