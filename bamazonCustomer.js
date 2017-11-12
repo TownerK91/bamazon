@@ -33,6 +33,17 @@ var run = function() { //STEP #6
         console.log(chosen);
         var many = answer.stock
         console.log(many);
+
+        connection.query("SELECT * FROM products", function(err, results){
+            for (var i = 0; i<results.length; i++){
+                if(many <= results[i].stock_quantity){
+                    console.log("Youre in luck!");
+                }else if(many > results[i].stock_quantity){
+                    console.log("Insufficient Quantity");
+                }
+            }
+        }); //<-End of connection.query(TWO)
+        //------------------------------------------------------
     })
 }//<-End of Run Function
 
@@ -40,12 +51,7 @@ var run = function() { //STEP #6
 
 
 
-connection.query("SELECT * FROM products", function(err, results){
-    for (var i = 0; i<results.length; i++){
 
-    }
-}); //<-End of connection.query(TWO)
-//------------------------------------------------------
 
 
 
