@@ -26,7 +26,8 @@ var run = function() { //STEP #6
         name:"stock",
         type: "input",
         message:"how many?",
-    }]).then(function(answer){
+    }])
+    .then(function(answer){
         console.log("You picked Item" + answer.itemID);
         console.log("You are buying " + answer.stock + " of item # " + answer.itemID);
         var chosen = answer.itemID
@@ -40,12 +41,12 @@ var run = function() { //STEP #6
             for (var i = 0; i<results.length; i++){
 
 
-        //--------NOT WORKING----------------------------
-                // if (results[i].product_name === answer.chosen){
-                //     actualItem = results[i].products;
-                //     console.log(actualItem);
-                //    }
-        //--------NOT WORKING----------------------------
+//--------NOT WORKING----------------------------
+                if (results[i].product_name === answer.chosen){
+                    actualItem = results[i].products;
+                    console.log(actualItem);
+                   }
+     
 
 
                 if (many <= results[i].stock_quantity){
@@ -55,6 +56,21 @@ var run = function() { //STEP #6
                 }
             }
         }); //<-End of connection.query(TWO)
+        .then(function){
+        if (actualItem.stock_quantity > parseInt(answer.many)) {
+        var inv =  actualItem.stock_quantity - answer.many;
+    
+            connection.query(
+                "UPDATE products SET ? WHERE ?",[{
+                    stock_quantity:inv
+                },{
+                    item_id: actualItem.id
+                
+                }],
+            );
+        }
+   //--------NOT WORKING----------------------------
+
 //------------------------------------------------------------
     })
 }//<-End of Run Function
