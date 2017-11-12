@@ -34,24 +34,37 @@ var run = function() { //STEP #6
         var many = answer.stock
         console.log(many);
 
+
+
+
+  //----------------* Need to Break 4 loop on [i] *--------------------------------------
         connection.query("SELECT * FROM products", function(err, results){
+            var actualItem;
             for (var i = 0; i<results.length; i++){
-                if(many <= results[i].stock_quantity){
+
+
+        //--------NOT WORKING----------------------------
+                // if (results[i].product_name === answer.chosen){
+                //     actualItem = results[i].products;
+                //     console.log(actualItem);
+                //    }
+        //--------NOT WORKING----------------------------
+                if (many <= results[i].stock_quantity){
                     console.log("Youre in luck!");
                 }else if(many > results[i].stock_quantity){
                     console.log("Insufficient Quantity");
                 }
             }
         }); //<-End of connection.query(TWO)
-        //------------------------------------------------------
+//------------------------------------------------------------
+
+
+
+
+
+
     })
 }//<-End of Run Function
-
-
-
-
-
-
 
 
 
