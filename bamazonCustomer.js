@@ -34,9 +34,6 @@ var run = function() { //STEP #6
         var many = answer.stock
         console.log(many);
 
-
-
-
   //----------------* Need to Break 4 loop on [i] *--------------------------------------
         connection.query("SELECT * FROM products", function(err, results){
             var actualItem;
@@ -50,7 +47,7 @@ var run = function() { //STEP #6
                 //    }
         //--------NOT WORKING----------------------------
 
-        
+
                 if (many <= results[i].stock_quantity){
                     console.log("Youre in luck!");
                 }else if(many > results[i].stock_quantity){
@@ -59,16 +56,8 @@ var run = function() { //STEP #6
             }
         }); //<-End of connection.query(TWO)
 //------------------------------------------------------------
-
-
-
-
-
-
     })
 }//<-End of Run Function
-
-
 
 connection.query("SELECT * FROM products", function(err, results){
     if (err) {
