@@ -49,6 +49,8 @@ var run = function() { //STEP #6
                 //     console.log(actualItem);
                 //    }
         //--------NOT WORKING----------------------------
+
+        
                 if (many <= results[i].stock_quantity){
                     console.log("Youre in luck!");
                 }else if(many > results[i].stock_quantity){
